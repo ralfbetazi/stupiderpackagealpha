@@ -1,3 +1,6 @@
+# ignore various R leftovers
 .Rproj.user
 .Rhistory
 .RData
+.Rcheck
+# ignore _scratch dir
