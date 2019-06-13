@@ -8,8 +8,14 @@ jobs:
     steps:
       - checkout
       - run:
+          name: run_r_cmd_build
+          command: "R CMD build ."
+      - run:
           name: run_r_cmd_check
-          command: "R CMD check ."
+          command: |
+            RPKGNAME=`cat DESCRIPTION | egrep ^Package: | head -1 | awk '{print $2}'`
+            RPKGVERSION=`cat DESCRIPTION | egrep ^Version: | head -1 | awk '{print $2}'`
+            R CMD check ${RPKGNAME}_${RPKGVERSION}.tar.gz
 workflows:
   version: 2
   my_workflows:

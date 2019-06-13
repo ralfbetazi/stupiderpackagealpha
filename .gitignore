@@ -2,5 +2,6 @@
 .Rproj.user
 .Rhistory
 .RData
-.Rcheck
+..Rcheck
 # ignore _scratch dir
+_scratch
